@@ -1,0 +1,94 @@
+<html>
+<head>
+
+   <meta charset="utf-8" />
+   <title>Population Simulator</title> 
+   
+   <!-- scripts -->
+   <script>
+   var subBoxNumber = 0;
+   
+	function customDistributionInputFunc(targetDiv) {
+		document.getElementById(targetDiv).innerHTML += '<label for="newAge'+subBoxNumber+'">age</label>	<input type="text" id="newAge'+subBoxNumber+'" name="newAge'+subBoxNumber+'" value="0">';
+		document.getElementById(targetDiv).innerHTML += '<label for="malePop'+subBoxNumber+'">male population</label>	<input type="text" id="malePop'+subBoxNumber+'" name="malePop'+subBoxNumber+'" value="0">';
+		document.getElementById(targetDiv).innerHTML += '<label for="femalePop'+subBoxNumber+'">female population</label>	<input type="text" id="femalePop'+subBoxNumber+'" name="femalePop'+subBoxNumber+'" value="0">';
+		document.getElementById(targetDiv).innerHTML += '<input type="button" id="addNextRow" name="addNextRow" value="add next row" onclick="customDistributionInputFunc(\''+targetDiv+'\')"> <br>'
+	}
+	
+	function addNewSubPopFunc() {
+	subBoxNumber += 1;
+		document.getElementById("subStats").innerHTML += '<div id="subPopBox' + subBoxNumber + '">'
+		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<label for="initialPopSize">initial population size*:</label>'
+		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<input type="text" id="initialPopSize" name="initialPopSize" value="0"><br>'
+		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<label for="averageLifeExpectancy">average life expectancy*:</label>'
+		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<input type="text" id="averageLifeExpectancy" name="averageLifeExpectancy" value="0"><br>'
+		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<label for="averageFertilityRate">average fertility rate*:</label>'
+		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<input type="text" id="averageFertilityRate" name="averageFertilityRate" value="0"><br>'
+		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<label for="averageFertilityFirstDeriv">fertility rate first derivative :</label>'
+		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<input type="text" id="averageFertilityFirstDeriv" name="averageFertilityFirstDeriv" value="0"><br>'
+		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<label for="averageFertilitySecondDeriv">fertility rate second derivative :</label>'
+		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<input type="text" id="averageFertilitySecondDeriv" name="averageFertilitySecondDeriv" value="0"><br>'
+		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<p>population distribution:</p>'
+		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<input type="button" id="customInput" name="distributionPreset" value="customInput" onclick="customDistributionInputFunc(\'subPopBoxDistributionBox' + subBoxNumber + '\')"> <br> <div id="subPopBoxDistributionBox' + subBoxNumber + '\""></div>'
+		document.getElementById("subStats").innerHTML += '</div>'
+	}
+	
+	</script>
+	
+	<!-- scripts -->
+	
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   <link rel = "stylesheet"   type = "text/css"   href = "css\index.css" />
+</head>
+   
+<body>
+	<form>
+		<h3>base population statistics</h3>
+			<div id="baseStats">
+				<label for="initialPopSize">initial population size*:</label>
+				<input type="text" id="initialPopSize" name="initialPopSize" value="0"><br>
+				<label for="averageLifeExpectancy">average life expectancy*:</label>
+				<input type="text" id="averageLifeExpectancy" name="averageLifeExpectancy" value="0"><br>
+				<label for="averageFertilityRate">average fertility rate*:</label>
+				<input type="text" id="averageFertilityRate" name="averageFertilityRate" value="0"><br>
+				<label for="averageFertilityFirstDeriv">fertility rate first derivative :</label>
+				<input type="text" id="averageFertilityFirstDeriv" name="averageFertilityFirstDeriv" value="0"><br>
+				<label for="averageFertilitySecondDeriv">fertility rate second derivative :</label>
+				<input type="text" id="averageFertilitySecondDeriv" name="averageFertilitySecondDeriv" value="0"><br>
+				<p>population distribution:</p>
+				  <input type="radio" id="broadPyramid" name="distributionPreset" value="broadPyramid">
+				  <label for="broadPyramid">broad pyramid</label>
+				  <input type="radio" id="narrowPyramid" name="distributionPreset" value="narrowPyramid">
+				  <label for="narrowPyramid">narrow pyramid</label>
+				  <input type="radio" id="inversePyramid" name="distributionPreset" value="inversePyramid">
+				  <label for="inversePyramid">inverse pyramid</label>
+				  <input type="radio" id="midBubble" name="distributionPreset" value="midBubble">
+				  <label for="midBubble">mid bubble</label>
+				  <input type="radio" id="earlyBubble" name="distributionPreset" value="earlyBubble">
+				  <label for="earlyBubble">early bubble</label>
+				  <input type="radio" id="lateBubble" name="distributionPreset" value="lateBubble">
+				  <label for="lateBubble">late bubble</label>
+				  <input type="button" id="customInput" name="distributionPreset" value="customInput" onclick="customDistributionInputFunc('customDistributionInput')"> <br>
+				<div id="customDistributionInput">
+					
+				</div>
+			</div>
+
+		<h3>sub population statistics</h3>
+			<div id="subStats">
+				<input type="button" id="addSubPop" name="addSubPop" value="add new sub-population" onclick="addNewSubPopFunc()"><br>
+			</div>
+			
+		<h3>simulation settings</h3>
+			<div id="simSettings">
+				<label for="simTime">number of years to run*:</label>
+				<input type="text" id="simTime" name="simTime" value="0"><br>
+			</div>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+#baseStats{
+	border: double;
+}
+
+#subStats{
+	border: double;
+}
+#simSettings{
+	border: double;
+}
+#subStats div{
+	border:solid;
+}
