@@ -3,40 +3,7 @@
 
    <meta charset="utf-8" />
    <title>Population Simulator</title> 
-   
-   <!-- scripts -->
-   <script>
-   var subBoxNumber = 0;
-   
-	function customDistributionInputFunc(targetDiv) {
-		document.getElementById(targetDiv).innerHTML += '<label for="newAge'+subBoxNumber+'">age</label>	<input type="text" id="newAge'+subBoxNumber+'" name="newAge'+subBoxNumber+'" value="0">';
-		document.getElementById(targetDiv).innerHTML += '<label for="malePop'+subBoxNumber+'">male population</label>	<input type="text" id="malePop'+subBoxNumber+'" name="malePop'+subBoxNumber+'" value="0">';
-		document.getElementById(targetDiv).innerHTML += '<label for="femalePop'+subBoxNumber+'">female population</label>	<input type="text" id="femalePop'+subBoxNumber+'" name="femalePop'+subBoxNumber+'" value="0">';
-		document.getElementById(targetDiv).innerHTML += '<input type="button" id="addNextRow" name="addNextRow" value="add next row" onclick="customDistributionInputFunc(\''+targetDiv+'\')"> <br>'
-	}
-	
-	function addNewSubPopFunc() {
-	subBoxNumber += 1;
-		document.getElementById("subStats").innerHTML += '<div id="subPopBox' + subBoxNumber + '">'
-		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<label for="initialPopSize">initial population size*:</label>'
-		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<input type="text" id="initialPopSize" name="initialPopSize" value="0"><br>'
-		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<label for="averageLifeExpectancy">average life expectancy*:</label>'
-		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<input type="text" id="averageLifeExpectancy" name="averageLifeExpectancy" value="0"><br>'
-		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<label for="averageFertilityRate">average fertility rate*:</label>'
-		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<input type="text" id="averageFertilityRate" name="averageFertilityRate" value="0"><br>'
-		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<label for="averageFertilityFirstDeriv">fertility rate first derivative :</label>'
-		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<input type="text" id="averageFertilityFirstDeriv" name="averageFertilityFirstDeriv" value="0"><br>'
-		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<label for="averageFertilitySecondDeriv">fertility rate second derivative :</label>'
-		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<input type="text" id="averageFertilitySecondDeriv" name="averageFertilitySecondDeriv" value="0"><br>'
-		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<p>population distribution:</p>'
-		document.getElementById("subPopBox"+subBoxNumber+"").innerHTML += '<input type="button" id="customInput" name="distributionPreset" value="customInput" onclick="customDistributionInputFunc(\'subPopBoxDistributionBox' + subBoxNumber + '\')"> <br> <div id="subPopBoxDistributionBox' + subBoxNumber + '\""></div>'
-		document.getElementById("subStats").innerHTML += '</div>'
-	}
-	
-	</script>
-	
-	<!-- scripts -->
-	
+   <script src="scripts/popScripts.js"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
