@@ -12,5 +12,5 @@ to do
 6. make use manual
 
 
-what this is:
-This is a tool for simulating population growth and decline, runs in the browser and is easy to use. currently under devlopment, more features will be added over time.
+What this is:
+This is a tool for simulating population growth and decline, runs in the browser and is easy to use. Currently under devlopment, more features will be added over time.
