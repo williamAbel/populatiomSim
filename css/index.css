@@ -9,5 +9,17 @@
 	border: double;
 }
 #subStats div{
-	border:solid;
+	border: solid;
+}
+
+#maleOutPutbox{
+width: 50%;
+position: relative;
+float: left;
+}
+
+#femaleOutPutbox{
+width: 50%;
+position: relative;
+float: right;
 }

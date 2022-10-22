@@ -99,7 +99,7 @@
 					if(populationArray[currentCitizen].gender == 1 && populationArray[currentCitizen].age <= 40){ //eligibility check
 						if(fertilityNumber >= Math.random()){
 							newGender = Math.floor(Math.random() * 2); //presuming 50/50 split
-							let citizen = {id:populationArray.length + 1, age:1, gender:newGender, state:1};
+							let citizen = {id:populationArray.length + 1, age:0, gender:newGender, state:1};
 							populationArray.push(citizen);
 						}
 			
@@ -118,13 +118,13 @@
 			if (populationArray[popCounter].state == 1){
 				if (populationArray[popCounter].gender == 0){
 					if(malePopArray[populationArray[popCounter].age] == undefined){ 
-						malePopArray[populationArray[popCounter].age] = 1;
+						malePopArray[populationArray[popCounter].age] = 0;
 					} else{
 						malePopArray[populationArray[popCounter].age] += 1;
 					}
 				}else{
 					if(femalePopArray[populationArray[popCounter].age] == undefined){ 
-						femalePopArray[populationArray[popCounter].age] = 1;
+						femalePopArray[populationArray[popCounter].age] = 0;
 					} else{
 						femalePopArray[populationArray[popCounter].age] += 1;
 					}
@@ -143,18 +143,24 @@
 		}
 	   }
 	   
-	   console.log("hello there");
-	   console.log(populationArray.length);
-	   console.log(malePopArray.length);
-	   console.log(femalePopArray.length);
-	   console.log(malePopArray[1]);
+	   var totalLivingMales = 0;
+	   var totalLivingFemales = 0;
 	   
 	   for(currentMaleAgeBracket = 1; currentMaleAgeBracket < malePopArray.length; currentMaleAgeBracket++){
-		   document.getElementById("maleOutPutBox").innerHTML += '<p>male population of age: ' + currentMaleAgeBracket + ' is ' + malePopArray[currentMaleAgeBracket] +'</p>'
+		   document.getElementById("maleOutPutBox").innerHTML += '<p>male population of age: ' + currentMaleAgeBracket + ' is ' + malePopArray[currentMaleAgeBracket] +'</p>';
+		   totalLivingMales += malePopArray[currentMaleAgeBracket];
 	   }
 	   for(currentFemaleAgeBracket = 1; currentFemaleAgeBracket < femalePopArray.length; currentFemaleAgeBracket++){
-		   document.getElementById("femaleOutPutBox").innerHTML += '<p>female population of age: ' + currentFemaleAgeBracket + ' is ' + femalePopArray[currentFemaleAgeBracket] +'</p>'
+		   document.getElementById("femaleOutPutBox").innerHTML += '<p>female population of age: ' + currentFemaleAgeBracket + ' is ' + femalePopArray[currentFemaleAgeBracket] +'</p>';
+		   totalLivingFemales += femalePopArray[currentFemaleAgeBracket];
 	   }
+	   
+	   var totalLivingPop = totalLivingFemales + totalLivingMales;
+	   document.getElementById("maleOutPutBox").innerHTML += '<p>total male population: ' + totalLivingMales +'</p>';
+	   document.getElementById("femaleOutPutBox").innerHTML += '<p>total female population: ' + totalLivingFemales +'</p>';
+	   document.getElementById("outPutBox").innerHTML += '<p>total population: ' + totalLivingPop +'</p>';
+	   document.getElementById("outPutBox").innerHTML += '<p>end fertility rate: ' + averageFertilityRate +'</p>';
+	   document.getElementById("outPutBox").innerHTML += '<p>end fertility rate first div: ' + averageFertilityFirstDeriv +'</p>';
    }
 	
 	function getFormData(){
