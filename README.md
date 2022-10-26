@@ -9,7 +9,7 @@ to do
 3. work on sub populations feature and custom population distributions
 4. fix bugs
 5. pretty-ify the outputs and improve clarity
-6. make use manual
+6. make user manual
 
 
 What this is:
