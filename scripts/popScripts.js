@@ -55,6 +55,10 @@
    }
    
    function runBaseSimulation(initalPopSize, averageLifeExpectancy, averageFertilityRate, averageFertilityFirstDeriv, averageFertilitySecondDeriv, popDistributionType, simTime){
+	   //clear old run results
+  	   document.getElementById("maleOutPutBox").innerHTML = "";
+	   document.getElementById("femaleOutPutBox").innerHTML = "";
+	   document.getElementById("combinedOutPutBox").innerHTML = "";
 	   let populationArray = [];
 	   for (let i = 0; i < initalPopSize; i++){
 		var newAge = 0;
@@ -147,20 +151,20 @@
 	   var totalLivingFemales = 0;
 	   
 	   for(currentMaleAgeBracket = 1; currentMaleAgeBracket < malePopArray.length; currentMaleAgeBracket++){
-		   document.getElementById("maleOutPutBox").innerHTML += '<p>male population of age: ' + currentMaleAgeBracket + ' is ' + malePopArray[currentMaleAgeBracket] +'</p>';
+		   document.getElementById("maleOutPutBox").innerHTML += '<p>male population of age ' + currentMaleAgeBracket + ': is ' + malePopArray[currentMaleAgeBracket] +'</p>';
 		   totalLivingMales += malePopArray[currentMaleAgeBracket];
 	   }
 	   for(currentFemaleAgeBracket = 1; currentFemaleAgeBracket < femalePopArray.length; currentFemaleAgeBracket++){
-		   document.getElementById("femaleOutPutBox").innerHTML += '<p>female population of age: ' + currentFemaleAgeBracket + ' is ' + femalePopArray[currentFemaleAgeBracket] +'</p>';
+		   document.getElementById("femaleOutPutBox").innerHTML += '<p>female population of age ' + currentFemaleAgeBracket + ': is ' + femalePopArray[currentFemaleAgeBracket] +'</p>';
 		   totalLivingFemales += femalePopArray[currentFemaleAgeBracket];
 	   }
 	   
 	   var totalLivingPop = totalLivingFemales + totalLivingMales;
 	   document.getElementById("maleOutPutBox").innerHTML += '<p>total male population: ' + totalLivingMales +'</p>';
 	   document.getElementById("femaleOutPutBox").innerHTML += '<p>total female population: ' + totalLivingFemales +'</p>';
-	   document.getElementById("outPutBox").innerHTML += '<p>total population: ' + totalLivingPop +'</p>';
-	   document.getElementById("outPutBox").innerHTML += '<p>end fertility rate: ' + averageFertilityRate +'</p>';
-	   document.getElementById("outPutBox").innerHTML += '<p>end fertility rate first div: ' + averageFertilityFirstDeriv +'</p>';
+	   document.getElementById("combinedOutPutBox").innerHTML += '<p>total population: ' + totalLivingPop +'</p>';
+	   document.getElementById("combinedOutPutBox").innerHTML += '<p>end fertility rate: ' + averageFertilityRate +'</p>';
+	   document.getElementById("combinedOutPutBox").innerHTML += '<p>end fertility rate first div: ' + averageFertilityFirstDeriv +'</p>';
    }
 	
 	function getFormData(){
