@@ -225,9 +225,9 @@
 		}
 		
 		<!-- build the next row for population inputs>
-		document.getElementById(targetDiv).innerHTML += '<label for="newAge|'+targetDiv+'|'+currentRowNumb+'">age</label>	<input type="text" id="newAge'+targetDiv+'|'+currentRowNumb+'" name="newAge'+targetDiv+'|'+currentRowNumb+'" value="0">';
-		document.getElementById(targetDiv).innerHTML += '<label for="malePop'+subBoxNumber+'">male population</label>	<input type="text" id="malePop'+subBoxNumber+'" name="malePop'+subBoxNumber+'" value="0">';
-		document.getElementById(targetDiv).innerHTML += '<label for="femalePop'+subBoxNumber+'">female population</label>	<input type="text" id="femalePop'+subBoxNumber+'" name="femalePop'+subBoxNumber+'" value="0">';
+		document.getElementById(targetDiv).innerHTML += '<label for="newAge|'+targetDiv+'|'+currentRowNumb+'">age</label>	<input type="text" id="newAge|'+targetDiv+'|'+currentRowNumb+'" name="newAge'+targetDiv+'|'+currentRowNumb+'" value="0">';
+		document.getElementById(targetDiv).innerHTML += '<label for="malePop|'+targetDiv+'|'+currentRowNumb+'">male population</label>	<input type="text" id="malePop|'+targetDiv+'|'+currentRowNumb+'" name="malePop|'+targetDiv+'|'+currentRowNumb+'" value="0">';
+		document.getElementById(targetDiv).innerHTML += '<label for="femalePop|'+targetDiv+'|'+currentRowNumb+'">female population</label>	<input type="text" id="femalePop|'+targetDiv+'|'+currentRowNumb+'" name="femalePop|'+targetDiv+'|'+currentRowNumb+'" value="0">';
 		document.getElementById(targetDiv).innerHTML += '<input type="button" id="addNextRow" name="addNextRow" value="add next row" onclick="customDistributionInputFunc(\''+targetDiv+'\')"> <br>'
 	}
 	
