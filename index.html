@@ -16,10 +16,6 @@
 	<form id="inputForm">
 		<h3>base population statistics</h3>
 			<div id="baseStats">
-				<label for="baseInitialPopSize">initial population size*:</label>
-				<input type="text" id="baseInitialPopSize" name="baseInitialPopSize" value="0"><br>
-				<label for="baseAverageLifeExpectancy">average life expectancy*:</label>
-				<input type="text" id="baseAverageLifeExpectancy" name="baseAverageLifeExpectancy" value="0"><br>
 				<label for="baseAverageFertilityRate">average fertility rate*:</label>
 				<input type="text" id="baseAverageFertilityRate" name="baseAverageFertilityRate" value="0"><br>
 				<label for="baseAverageFertilityFirstDeriv">fertility rate first derivative :</label>
@@ -27,24 +23,12 @@
 				<label for="baseAverageFertilitySecondDeriv">fertility rate second derivative :</label>
 				<input type="text" id="baseAverageFertilitySecondDeriv" name="baseAverageFertilitySecondDeriv" value="0"><br>
 				<p>population distribution:</p>
-				  <input type="radio" id="baseBroadPyramid" name="distributionPreset" value="broadPyramid">
-				  <label for="baseBroadPyramid">broad pyramid</label>
-				  <input type="radio" id="baseNarrowPyramid" name="distributionPreset" value="narrowPyramid">
-				  <label for="baseNarrowPyramid">narrow pyramid</label>
-				  <input type="radio" id="baseInversePyramid" name="distributionPreset" value="inversePyramid">
-				  <label for="baseInversePyramid">inverse pyramid</label>
-				  <input type="radio" id="baseMidBubble" name="distributionPreset" value="midBubble">
-				  <label for="baseMidBubble">mid bubble</label>
-				  <input type="radio" id="baseEarlyBubble" name="distributionPreset" value="earlyBubble">
-				  <label for="baseEarlyBubble">early bubble</label>
-				  <input type="radio" id="baseLateBubble" name="distributionPreset" value="lateBubble">
-				  <label for="baseLateBubble">late bubble</label>
-				  <input type="button" id="customInput" name="distributionPreset" value="customInput" onclick="customDistributionInputFunc('customDistributionInput')"> <br>
+				  <input type="button" id="customInput" name="distributionPreset" value="add row" onclick="customDistributionInputFunc('customDistributionInput')"> <br>
 				<div id="customDistributionInput">
 					
 				</div>
 			</div>
-
+     
 		<h3>sub population statistics</h3>
 			<div id="subStats">
 				<input type="button" id="addSubPop" name="addSubPop" value="add new sub-population" onclick="addNewSubPopFunc()"><br>
